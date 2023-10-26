@@ -1,6 +1,7 @@
 <template>
     <main class="antialiased transform-gpu w-full min-h-screen flex flex-col items-center select-none p-4">
         <div class="mx-auto max-w-mw w-full h-full">
+            <h2 class="text-center mb-4">Welcome to Wings of Nature, a showcase of diverse critters found in our neihbourhood.</h2>
             <div class="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
                 <NuxtLink
                     v-for="image in images"
