@@ -1,0 +1,15 @@
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+.env
+.env.example
+dist
+coverage
+drafts
+.netlify
+auto-imports.d.ts
+.env.example
+test
