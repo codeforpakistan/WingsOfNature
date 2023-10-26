@@ -2,7 +2,7 @@
     <Head>
         <Title>Wings of Nature</Title>
         <Link rel="icon" href="/icon.png" type="image/png" />
-        <Meta name="description" content="An image gallery built with Nuxt 3" />
+        <Meta name="description" content="Where nature meets art" />
     </Head>
     <NuxtLayout>
         <Navbar />
