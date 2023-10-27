@@ -1,8 +1,8 @@
-# Wings of Nature: Biodiversity App for Insect Identification and Data Collection
+# Wings of Nature: Biodiversity Showcase for Insect Identification and Data Collection
 
 ## Overview
 
-Wings of Nature is a comprehensive solution aimed at cataloging the diversity of insects in various ecosystems. The project features a React Native app for data collection and a dashboard for data visualization.
+Wings of Nature is a collab between PML and CFP
 
 ## Features
 
@@ -21,25 +21,30 @@ Wings of Nature is a comprehensive solution aimed at cataloging the diversity of
 
 ## Installation
 
-```bash
-# Clone the repository
-git clone https://github.com/[YourUsername]/WingsOfNature.git
 
-# Navigate to the project directory
-cd WingsOfNature
+_Note_ this project uses `pnpm` as the package manager. Replace with `npm run` or `yarn` if needed.
 
-# Install dependencies
-npm install
+Get started
 
-# Start the development server
-npm start
+```
+git clone https://github.com/codeforpakistan/WingsOfNature.git
 ```
 
-## Usage
+```
+cd WingsOfNature
+```
 
-1. **Data Collection**: Use the React Native app to submit photos and data for insect identification.
-2. **Dashboard**: Access real-time analytics on insect diversity.
-3. **Mapping**: Visualize insect distribution and hotspots through Ushahidi or Leaflet.
+```
+pnpm install
+```
+
+Development mode
+
+```
+pnpm dev
+```
+
+
 
 ## Contributing
 
