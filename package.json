@@ -1,5 +1,5 @@
 {
-    "name": "gallery",
+    "name": "wings-of-nature",
     "version": "0.1.0",
     "scripts": {
         "build": "nuxt build",
