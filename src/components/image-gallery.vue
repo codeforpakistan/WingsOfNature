@@ -1,7 +1,7 @@
 <template>
     <div
         v-if="currentImage"
-        class="w-full h-full fixed inset-0 overflow-auto flex items-center justify-center"
+        class="fixed inset-0 flex items-center justify-center w-full h-full overflow-auto"
         @click="close"
     >
         <Transition>
@@ -17,22 +17,29 @@
                 class="absolute inset-0 w-full h-full object-cover blur-xl brightness-[0.25]"
             />
         </Transition>
-        <div class="max-w-mw w-full h-full flex justify-center items-center">
+        <div class="flex items-center justify-center w-full h-full max-w-mw">
             <Transition name="image">
                 <div v-if="show" ref="swipeableRef" class="relative cursor-default" @click.stop="">
-                    <Transition>
+                    <!-- <Transition>
                         <div
                             v-if="showButtons"
-                            class="absolute top-0 left-0 w-full inline-flex justify-between p-4 z-10"
+                            class="absolute top-0 left-0 z-10 inline-flex justify-between w-full p-4"
                         >
                             <ImageAction action="close" :image="currentImage" />
                             <div class="inline-flex gap-4">
                                 <ImageAction action="download" :image="currentImage" />
                                 <ImageAction action="source" :image="currentImage" />
                             </div>
-                            <span class="bg-black bg-opacity-50 text-white p-2 rounded absolute bottom-0">
+                            <div class="absolute bottom-0 p-2 text-white bg-black bg-opacity-50 rounded">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            </span>
+                            </div>
+                        </div>
+                    </Transition> -->
+                    <Transition>
+                        <div v-if="showButtons" class="absolute top-0 right-0 z-10 flex flex-col gap-4 p-4">
+                            <ImageAction action="close" :image="currentImage" />
+                            <ImageAction action="download" :image="currentImage" />
+                            <ImageAction action="source" :image="currentImage" />
                         </div>
                     </Transition>
                     <NuxtPicture
@@ -44,6 +51,26 @@
                         :alt="currentImage.alt"
                         :preload="true"
                     />
+                    <div class="absolute flex items-center gap-2 text-white top-4 left-4">
+                        <div class="w-10 h-10 overflow-hidden rounded-full">
+                            <NuxtPicture
+                                :quality="55"
+                                :src="getImageSrc(currentImage)"
+                                :img-attrs="{
+                                    class: 'w-full h-full object-cover',
+                                }"
+                                :alt="currentImage.alt"
+                                :preload="true"
+                            />
+                        </div>
+                        <span>{{ currentImage.alt }}</span>
+                    </div>
+
+                    <div class="absolute text-white bottom-4 right-4">
+                        <span class="bottom-0 p-2 text-white bg-black bg-opacity-50 rounded">{{
+                            currentImage.alt
+                        }}</span>
+                    </div>
                 </div>
             </Transition>
         </div>

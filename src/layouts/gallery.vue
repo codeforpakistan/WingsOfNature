@@ -1,7 +1,7 @@
 <template>
-    <main class="antialiased transform-gpu w-full h-full absolute inset-0 select-none bg-background">
+    <main class="absolute inset-0 w-full h-full antialiased select-none transform-gpu bg-background">
         <ImageGallery />
-        <ImageCarousel />
+        <!-- <ImageCarousel /> -->
         <slot />
     </main>
 </template>

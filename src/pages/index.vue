@@ -1,13 +1,14 @@
 <template>
-    <main class="antialiased transform-gpu w-full min-h-screen flex flex-col items-center select-none p-4">
-        <div class="mx-auto max-w-mw w-full h-full">
-            <h2 class="text-center mb-4">Welcome to Wings of Nature, a showcase of diverse critters found in our neihbourhood.</h2>
-            <div class="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
+    <main class="flex flex-col items-center w-full min-h-screen p-4 antialiased select-none transform-gpu">
+        <div class="w-full h-full mx-auto max-w-mw">
+            <h2 class="mb-4 text-center">
+                Welcome to Wings of Nature, a showcase of diverse critters found in our neihbourhood.
+            </h2>
+            <div class="xl:ml-10 xl:mr-10 columns-1 sm:columns-1 xl:columns-1 2xl:columns-1">
                 <NuxtLink
-                    v-for="image in images"
                     :key="image.idx"
                     :href="`/p/${image.idx}`"
-                    class="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
+                    class="relative xl:h-[70vh] block w-full mb-5 after:content group cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
                 >
                     <NuxtImg
                         format="webp"
@@ -30,6 +31,33 @@
                     <span class="sr-only">{{ image.alt }}</span>
                 </NuxtLink>
             </div>
+            <div class="xl:ml-10 xl:mr-10">
+                <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
+                    <RouterLink v-for="card in cards" :key="card.title" class="flex justify-center" :to="'/grid'">
+                        <div
+                            class="flex flex-col h-full bg-white rounded-lg shadow-md dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0 sm:rounded-r-none"
+                        >
+                            <NuxtImg class="rounded-lg" :src="card.image" :alt="card.title" />
+
+                            <div class="flex-grow p-6">
+                                <h5
+                                    class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
+                                >
+                                    {{ card.title }}
+                                </h5>
+                                <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                                    {{ card.desc }}
+                                </p>
+                            </div>
+                            <div
+                                class="px-6 py-3 mt-auto text-center border-t-2 border-neutral-100 dark:border-neutral-600 dark:text-neutral-50"
+                            >
+                                <small>Some text</small>
+                            </div>
+                        </div>
+                    </RouterLink>
+                </div>
+            </div>
         </div>
     </main>
 </template>
@@ -39,4 +67,22 @@ import { getImageSrc } from "@/composables/utils";
 import useImages from "@/composables/useImages";
 
 const images = useImages();
+const image = images[1];
+const cards = [
+    {
+        image: getImageSrc(images[0]),
+        title: "Insects One",
+        desc: "This card has supporting text below as a natural lead-in to additional content.",
+    },
+    {
+        image: getImageSrc(images[2]),
+        title: "Insects Two",
+        desc: "This card has supporting text below as a natural lead-in to additional content.",
+    },
+    {
+        image: getImageSrc(images[3]),
+        title: "Insects Three",
+        desc: "This card has supporting text below as a natural lead-in to additional content.",
+    },
+];
 </script>
