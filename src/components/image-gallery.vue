@@ -51,20 +51,22 @@
                         :alt="currentImage.alt"
                         :preload="true"
                     />
-                    <div class="absolute flex items-center gap-2 text-white top-4 left-4">
-                        <div class="w-10 h-10 overflow-hidden rounded-full">
-                            <NuxtPicture
-                                :quality="55"
-                                :src="getImageSrc(currentImage)"
-                                :img-attrs="{
-                                    class: 'w-full h-full object-cover',
-                                }"
-                                :alt="currentImage.alt"
-                                :preload="true"
-                            />
+                    <router-link to="/profile">
+                        <div class="absolute flex items-center gap-2 text-white top-4 left-4">
+                            <div class="w-10 h-10 overflow-hidden rounded-full">
+                                <NuxtPicture
+                                    :quality="55"
+                                    :src="getImageSrc(currentImage)"
+                                    :img-attrs="{
+                                        class: 'w-full h-full object-cover',
+                                    }"
+                                    :alt="currentImage.alt"
+                                    :preload="true"
+                                />
+                            </div>
+                            <span>{{ currentImage.alt }}</span>
                         </div>
-                        <span>{{ currentImage.alt }}</span>
-                    </div>
+                    </router-link>
 
                     <div class="absolute text-white bottom-4 right-4">
                         <span class="bottom-0 p-2 text-white bg-black bg-opacity-50 rounded">{{

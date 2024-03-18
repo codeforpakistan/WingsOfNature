@@ -15,7 +15,7 @@
                         :src="getImageSrc(image)"
                         :width="10"
                         :quality="1"
-                        class="w-full h-full rounded-lg object-cover blur-lg saturate-[2] absolute inset-0"
+                        class="absolute inset-0 object-cover w-full h-full rounded-lg"
                         alt=""
                     />
                     <NuxtImg
@@ -31,6 +31,8 @@
                     <span class="sr-only">{{ image.alt }}</span>
                 </NuxtLink>
             </div>
+
+            <hr class="xl:ml-10 xl:mr-10 my-12 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
             <div class="xl:ml-10 xl:mr-10">
                 <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
                     <RouterLink v-for="card in cards" :key="card.title" class="flex justify-center" :to="'/grid'">
@@ -58,6 +60,7 @@
                     </RouterLink>
                 </div>
             </div>
+            <States />
         </div>
     </main>
 </template>
@@ -65,9 +68,10 @@
 <script setup lang="ts">
 import { getImageSrc } from "@/composables/utils";
 import useImages from "@/composables/useImages";
+import States from "~/components/states.vue";
 
 const images = useImages();
-const image = images[1];
+const image = images[4];
 const cards = [
     {
         image: getImageSrc(images[0]),
