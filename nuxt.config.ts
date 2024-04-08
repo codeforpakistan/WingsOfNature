@@ -71,7 +71,6 @@ export default defineNuxtConfig({
     },
     css: [
         // Import Poppins font
-        "typeface-poppins",
         // Other CSS files or Tailwind CSS if not using JIT mode
     ],
 });

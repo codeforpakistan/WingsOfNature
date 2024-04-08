@@ -8,6 +8,9 @@ module.exports = {
             },
             colors: {
                 background: "#020202",
+                navl: "#639A88",
+                navd: "#2B4141",
+                cloud: "#ecf0f1",
             },
             fontSize: {
                 sm: "0.875rem", // 14px

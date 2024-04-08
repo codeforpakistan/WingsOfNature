@@ -1,9 +1,9 @@
 <template>
     <main class="flex flex-col items-center w-full min-h-screen p-4 antialiased select-none transform-gpu">
         <div class="w-full h-full mx-auto max-w-mw">
-            <h2 class="mb-4 text-center">
-                Welcome to Wings of Nature, a showcase of diverse critters found in our neihbourhood.
-            </h2>
+            <h5 class="hidden mt-8 mb-8 text-2xl font-bold text-center text-navd lg:block">
+                Welcome to Wings of Nature , a showcase of diverse critters found in our neihbourhood.
+            </h5>
             <div class="xl:ml-10 xl:mr-10 columns-1 sm:columns-1 xl:columns-1 2xl:columns-1">
                 <NuxtLink
                     :key="image.idx"
@@ -31,20 +31,19 @@
                     <span class="sr-only">{{ image.alt }}</span>
                 </NuxtLink>
             </div>
-
-            <hr class="xl:ml-10 xl:mr-10 my-12 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
-            <div class="xl:ml-10 xl:mr-10">
+            <h5 class="mt-8 mb-8 text-xl font-bold text-center text-navd lg:hidden">
+                Welcome to Wings of Nature, a showcase of diverse critters found in our neihbourhood.
+            </h5>
+            <div class="px-6 py-12 rounded xl:ml-10 xl:mr-10 bg-cloud">
                 <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
                     <RouterLink v-for="card in cards" :key="card.title" class="flex justify-center" :to="'/grid'">
                         <div
-                            class="flex flex-col h-full bg-white rounded-lg shadow-md dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0 sm:rounded-r-none"
+                            class="flex flex-col h-full bg-white rounded shadow-xl dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0 sm:rounded-r-none"
                         >
-                            <NuxtImg class="rounded-lg" :src="card.image" :alt="card.title" />
+                            <NuxtImg class="m-2 rounded-lg" :src="card.image" :alt="card.title" />
 
                             <div class="flex-grow p-6">
-                                <h5
-                                    class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
-                                >
+                                <h5 class="mb-2 text-xl font-bold leading-tight text-navl dark:text-neutral-50">
                                     {{ card.title }}
                                 </h5>
                                 <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
@@ -61,6 +60,7 @@
                 </div>
             </div>
             <States />
+            <Ilustration />
         </div>
     </main>
 </template>
