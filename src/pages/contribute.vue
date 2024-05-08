@@ -1,6 +1,13 @@
 <template>
     <div class="flex items-center justify-center min-h-screen">
         <div class="max-w-md p-5 mx-auto mt-10 mb-10 bg-white rounded-md shadow-sm">
+            <div v-if="isProcessing" class="mb-4 text-center text-blue-500">Uploading picture...</div>
+            <div v-if="successMessage" class="mb-4 text-center text-green-500">
+                {{ successMessage }}
+            </div>
+            <div v-if="errorMessage" class="mb-4 text-center text-red-500">
+                {{ errorMessage }}
+            </div>
             <form @submit.prevent="handleSubmit">
                 <div class="mb-4">
                     <label class="block mb-2 text-sm font-bold text-gray-700" for="name"> Name </label>
@@ -18,7 +25,7 @@
                         id="email"
                         v-model="formData.email"
                         class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                        type="text"
+                        type="email"
                         placeholder="Your email"
                     />
                 </div>
@@ -62,8 +69,13 @@ export default {
                 name: "",
                 email: "",
                 about: "",
-                picture: null, // To store the file object
+                picture: null,
             },
+            isProcessing: false,
+            successMessage: "",
+            errorMessage: "",
+            successMessageVisible: false,
+            errorMessageVisible: false,
         };
     },
     methods: {
@@ -73,23 +85,31 @@ export default {
         },
         async handleSubmit() {
             try {
+                this.isProcessing = true;
                 const Data = new FormData();
                 Data.append("name", this.formData.name);
                 Data.append("email", this.formData.email);
                 Data.append("about", this.formData.about);
                 Data.append("picture", this.formData.picture);
-                // console.log(this.formData.picture);
 
-                // Send formData to server
                 const response = await axios.post("/api/post", Data, {
                     headers: {
                         "Content-Type": "multipart/form-data",
                     },
                 });
-
-                console.log(response.data);
+                this.successMessage = "Picture uploaded successfully!";
+                this.successMessageVisible = true;
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000); // 3 seconds
             } catch (error) {
-                console.error("Error uploading picture:", error);
+                this.errorMessage = "Error uploading picture: " + error.message;
+                this.errorMessageVisible = true;
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000); // 3 seconds
+            } finally {
+                this.isProcessing = false;
             }
         },
     },

@@ -10,11 +10,11 @@
                 :alt="image.alt"
                 :preload="true"
             />
-            <div class="flex flex-col justify-center gap-1">
+            <!-- <div class="flex flex-col justify-center gap-1">
                 <h1 class="mb-2 text-lg">Fly Enthusiasm</h1>
                 <p>lorem lorem</p>
                 <p>lorem</p>
-            </div>
+            </div> -->
         </div>
         <main class="flex flex-col items-center w-full min-h-screen p-4 antialiased select-none transform-gpu">
             <div class="w-full h-full mx-auto max-w-mw">
@@ -55,7 +55,9 @@
 <script setup lang="ts">
 import { getImageSrc } from "@/composables/utils";
 import useImages from "@/composables/useImages";
-const currentImage = useCurrentImage();
 const images = useImages();
+// console.log(data);
+// const currentImage = useCurrentImage();
+// const images = data.filter((image) => image?.email === currentImage.email);
 const image = images[4];
 </script>

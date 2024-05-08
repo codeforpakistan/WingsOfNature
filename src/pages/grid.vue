@@ -35,8 +35,12 @@
 </template>
 
 <script setup lang="ts">
+import { useRoute } from "vue-router";
+const route = useRoute();
+const id = route.query.id;
 import { getImageSrc } from "@/composables/utils";
 import useImages from "@/composables/useImages";
-
-const images = useImages();
+const data = useImages();
+console.log(data);
+const images = data.filter((image) => image.category === id);
 </script>

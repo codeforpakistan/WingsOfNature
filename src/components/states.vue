@@ -2,30 +2,26 @@
     <section class="py-3 my-10 text-md-center py-md-4 py-lg-5 xl:ml-10 xl:mr-10">
         <div class="container flex flex-col items-center gap-3 mx-auto">
             <p class="text-5xl font-bold text-navd">Who we are</p>
-            <p class="my-3 text-lg text-justify m-md-4 m-lg-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et corporis earum distinctio, inventore, sequi,
-                iusto nostrum facere illo enim expedita quisquam. Consequatur explicabo sed natus temporibus aspernatur
-                alias repellendus repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto libero
-                mollitia temporibus dolorum vitae dolorem tenetur in. Harum autem consequatur, eos commodi illo aperiam,
-                non temporibus hic distinctio deleniti perferendis?
+            <p class="my-3 text-lg m-md-4 m-lg-5">
+                Wings of Nature is collaborative project between Precision Medicine Lab and Code For Pakistan where we
+                focus on little flying machines that exists in our nature such as bees, beetles and butterflies which
+                are ignored, harmed and about to go extinct because of humans. These are the wings which directly and
+                indirectly effects our ecosystems, food and our lives. Let's spread the words and protect them.
             </p>
             <div class="flex flex-wrap justify-between w-full gap-4 px-10">
                 <div class="flex flex-col items-center w-full mb-2 md:w-1/2 lg:w-1/3 xl:w-1/4">
-                    <h5 class="text-6xl text-navd">45</h5>
-                    <p class="text-center">
-                        Contributers<br />
-                        lorem
-                    </p>
+                    <h5 class="text-6xl text-navd">15</h5>
+                    <p class="text-xl font-bold text-center text-navd">Contributers</p>
                 </div>
 
                 <div class="flex flex-col items-center w-full mb-2 md:w-1/2 lg:w-1/3 xl:w-1/4">
-                    <h5 class="text-6xl text-navd">31</h5>
-                    <p class="text-center">Photographers<br />lorem</p>
+                    <h5 class="text-6xl text-navd">10</h5>
+                    <p class="text-xl font-bold text-center text-navd">Team Members</p>
                 </div>
 
                 <div class="flex flex-col items-center w-full mb-2 md:w-1/2 lg:w-1/3 xl:w-1/4">
-                    <h5 class="text-6xl text-navd">300</h5>
-                    <p class="text-center">Pictures<br />Contributed</p>
+                    <h5 class="text-6xl text-navd">200</h5>
+                    <p class="text-xl font-bold text-center text-navd">Pictures</p>
                 </div>
             </div>
 
