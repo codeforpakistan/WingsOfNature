@@ -2,7 +2,7 @@
     <nav class="border-gray-200 bg-navd">
         <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-2 mx-auto">
             <a href="/" class="flex items-center">
-                <img src="../assets/WINGS OF NATURE logo FINAL-022.png" width="130" height="50" />
+                <img src="../assets/logo.png" width="180" height="60" />
             </a>
             <button
                 data-collapse-toggle="navbar-default"
@@ -34,29 +34,29 @@
                 :class="{ hidden: !menuOpen, block: menuOpen, 'w-full': true, 'md:block': true, 'md:w-auto': true }"
             >
                 <ul
-                    class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg bg-nav md:p-0 bg-dark-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+                    class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg lg:space-x-24 md:space-x-16 bg-nav md:p-0 bg-dark-50 md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
                 >
                     <li>
                         <router-link
                             to="/"
-                            class="block py-2 pl-3 pr-4 rounded text-navl hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                            :class="{ 'bg-navl  text-white': $route.path === '/' }"
+                            class="block py-2 pl-3 pr-4 text-2xl text-white rounded lg:text-4xl md:border-0 md:p-0"
+                            :class="{ '': $route.path === '/' }"
                             >Home</router-link
                         >
                     </li>
                     <li>
                         <router-link
                             to="/contribute"
-                            class="block py-2 pl-3 pr-4 rounded text-navl hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                            :class="{ 'bg-navl text-white': $route.path === '/contribute' }"
+                            class="block py-2 pl-3 pr-4 text-2xl text-white rounded lg:text-4xl md:border-0 md:p-0"
+                            :class="{ '': $route.path === '/contribute' }"
                             >Contribute</router-link
                         >
                     </li>
                     <li>
                         <router-link
                             to="/about"
-                            class="block py-2 pl-3 pr-4 rounded text-navl hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                            :class="{ 'bg-navl text-white': $route.path === '/about' }"
+                            class="block py-2 pl-3 pr-4 text-2xl text-white rounded lg:text-4xl md:border-0 md:p-0"
+                            :class="{ '': $route.path === '/about' }"
                             >About</router-link
                         >
                     </li>

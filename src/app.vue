@@ -7,19 +7,7 @@
     <NuxtLayout>
         <Navbar />
         <NuxtPage />
-        <footer class="py-3 mt-auto text-center text-white bg-navd">
-            <p class="text-white-500">
-                Wings of Nature is a biodiversity collaboration project between
-                <a class="text-yellow-400 no-underline hover:text-green-400" href="https://www.precisionmedicine.pk/"
-                    >Precision Medicine Lab</a
-                >
-                and
-                <a class="text-yellow-400 no-underline hover:text-green-400" href="https://codeforpakistan.org"
-                    >Code for Pakistan</a
-                >
-                ❤️
-            </p>
-        </footer>
+        <Footer />
     </NuxtLayout>
 </template>
 

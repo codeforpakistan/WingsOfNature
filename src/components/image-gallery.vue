@@ -20,21 +20,6 @@
         <div class="flex items-center justify-center w-full h-full max-w-mw">
             <Transition name="image">
                 <div v-if="show" ref="swipeableRef" class="relative cursor-default" @click.stop="">
-                    <!-- <Transition>
-                        <div
-                            v-if="showButtons"
-                            class="absolute top-0 left-0 z-10 inline-flex justify-between w-full p-4"
-                        >
-                            <ImageAction action="close" :image="currentImage" />
-                            <div class="inline-flex gap-4">
-                                <ImageAction action="download" :image="currentImage" />
-                                <ImageAction action="source" :image="currentImage" />
-                            </div>
-                            <div class="absolute bottom-0 p-2 text-white bg-black bg-opacity-50 rounded">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            </div>
-                        </div>
-                    </Transition> -->
                     <Transition>
                         <div v-if="showButtons" class="absolute top-0 right-0 z-10 flex flex-col gap-4 p-4">
                             <ImageAction action="close" :image="currentImage" />
