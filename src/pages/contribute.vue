@@ -1,37 +1,122 @@
 <template>
-  <div class="max-w-md mx-auto bg-white p-5 rounded-md shadow-sm mt-10 mb-10">
-    <form>
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
-          Name
-        </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-white-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Your name">
-      </div>
-      <div class="mb-4">
-        <label class="block text-white-700 text-sm font-bold mb-2" for="about">
-          About the Picture
-        </label>
-        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-white-700 leading-tight focus:outline-none focus:shadow-outline" id="about" type="text" placeholder="Tell us about the picture"></textarea>
-      </div>
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="file">
-          Upload Picture
-        </label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="file" type="file">
-      </div>
-      <div class="flex items-center justify-between">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-          Submit
-        </button>
-      </div>
-    </form>
-  </div>
+    <div>
+        <Hero image="/treecricket.jpg" />
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="max-w-md p-5 mx-auto mt-10 mb-10 bg-white rounded-md shadow-sm">
+                <div v-if="isProcessing" class="mb-4 text-center text-blue-500">Uploading picture...</div>
+                <div v-if="successMessage" class="mb-4 text-center text-green-500">
+                    {{ successMessage }}
+                </div>
+                <div v-if="errorMessage" class="mb-4 text-center text-red-500">
+                    {{ errorMessage }}
+                </div>
+                <form @submit.prevent="handleSubmit">
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-bold text-gray-700" for="name"> Name </label>
+                        <input
+                            id="name"
+                            v-model="formData.name"
+                            class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                            type="text"
+                            placeholder="Your name"
+                        />
+                    </div>
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-bold text-gray-700" for="email"> Email </label>
+                        <input
+                            id="email"
+                            v-model="formData.email"
+                            class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                            type="email"
+                            placeholder="Your email"
+                        />
+                    </div>
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-bold text-gray-700" for="about">
+                            About the Picture
+                        </label>
+                        <textarea
+                            id="about"
+                            v-model="formData.about"
+                            class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                            placeholder="Tell us about the picture"
+                        ></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-bold text-gray-700" for="file"> Upload Picture </label>
+                        <input
+                            id="file"
+                            class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                            type="file"
+                            @change="handleFileUpload"
+                        />
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button
+                            class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+                            type="submit"
+                        >
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
-    name: 'Contribute',
-    path: '/contribute'
-}
-</script>
+    data() {
+        return {
+            formData: {
+                name: "",
+                email: "",
+                about: "",
+                picture: null,
+            },
+            isProcessing: false,
+            successMessage: "",
+            errorMessage: "",
+            successMessageVisible: false,
+            errorMessageVisible: false,
+        };
+    },
+    methods: {
+        handleFileUpload(event) {
+            const file = event.target.files[0];
+            this.formData.picture = file;
+        },
+        async handleSubmit() {
+            try {
+                this.isProcessing = true;
+                const Data = new FormData();
+                Data.append("name", this.formData.name);
+                Data.append("email", this.formData.email);
+                Data.append("about", this.formData.about);
+                Data.append("picture", this.formData.picture);
 
+                const response = await axios.post("/api/post", Data, {
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                    },
+                });
+                this.successMessage = "Picture uploaded successfully!";
+                this.successMessageVisible = true;
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000); // 3 seconds
+            } catch (error) {
+                this.errorMessage = "Error uploading picture: " + error.message;
+                this.errorMessageVisible = true;
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000); // 3 seconds
+            } finally {
+                this.isProcessing = false;
+            }
+        },
+    },
+};
+</script>

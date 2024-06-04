@@ -34,6 +34,9 @@ export default defineNuxtConfig({
         },
         plugins: [imagetools()],
     },
+    runtimeConfig: {
+        MONGODB_URI: process.env.MONGODB_URI,
+    },
     modules: ["@nuxtjs/tailwindcss", "@nuxt/image-edge", "vite-plugin-vue-type-imports/nuxt", "@kevinmarrec/nuxt-pwa"],
     image: {
         //supported providers are currently either vercel or ipx
@@ -66,4 +69,8 @@ export default defineNuxtConfig({
     tailwindcss: {
         cssPath: "@/assets/css/tailwind.css",
     },
+    css: [
+        // Import Poppins font
+        // Other CSS files or Tailwind CSS if not using JIT mode
+    ],
 });

@@ -5,7 +5,7 @@
         class="p-2 rounded-full duration-100 bg-gray-800 bg-opacity-80 hover:bg-gray-700 focus:bg-gray-700 outline-gray-100 outline-2 text-white z-[999]"
         @click="handleClick"
     >
-        <ArrowDownOnSquareIcon v-if="action === 'download'" class="w-4 h-4 stroke-white stroke-0" />
+        <ArrowDownOnSquareIcon v-if="action === 'download'" class="w-4 h-4 stroke-0 stroke-white" />
         <ArrowUpRightIcon v-if="action === 'source'" class="w-4 h-4 stroke-white" />
         <XMarkIcon v-if="action === 'close'" class="w-4 h-4 stroke-white" />
     </button>
@@ -30,7 +30,7 @@ const ariaLabel = {
 const handleClick = (e: MouseEvent) => {
     switch (props.action) {
         case "close":
-            router.push("/");
+            router.back();
             break;
         case "source":
             window.open(props.image.src, "_blank");

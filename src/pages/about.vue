@@ -1,18 +1,30 @@
 <template>
-    <div class="grid grid-cols-3 gap-4 mx-auto max-w-mw w-full h-full p-8">
-        <h1 class="text-4xl font-bold mb-4 col-span-3">About This Project</h1>
-        <img class="w-full h-64 object-cover mb-8 col-span-3" src="https://via.placeholder.com/800" alt="About image">
-        <p class="text-lg mb-4 col-span-3">Wings of Nature is a collaborative project between Precision Medicine Lab and Code For Pakistan where we focus on little flying machines that exist in our nature such as bees, beetles and butterflies which are ignored, harmed and about to go extinct because of humans. These are the wings which directly and indirectly affect our ecosystems, food and our lives.</p>
-        <img class="w-full h-64 object-cover mb-8" src="https://via.placeholder.com/800" alt="Placeholder image">
-        <img class="w-full h-64 object-cover mb-8" src="https://via.placeholder.com/800" alt="Placeholder image">
-        <img class="w-full h-64 object-cover mb-8" src="https://via.placeholder.com/800" alt="Placeholder image">
-        <p class="text-lg col-span-3">Let's spread the words and protect them.</p>
+    <div>
+        <Hero image="/big_eye.jpg" />
+        <div>
+            <div class="flex flex-wrap">
+                <div class="flex flex-col flex-grow w-full gap-4 px-4 py-10 text-white lg:w-1/2 bg-navl">
+                    <h2 class="text-2xl font-bold text-center lg:text-4xl">{{ about.cfp.name }}</h2>
+                    <p class="mt-2 font-light lg:text-3xl">{{ about.cfp.about }}</p>
+                </div>
+                <div class="flex flex-col flex-grow w-full gap-4 px-4 py-10 text-white lg:w-1/2 bg-mgreen">
+                    <h2 class="text-2xl font-bold text-center lg:text-4xl">{{ about.pml.name }}</h2>
+                    <p class="mt-2 font-light lg:text-3xl">{{ about.pml.about }}</p>
+                </div>
+            </div>
+
+            <div class="w-full">
+                <div class="flex flex-col gap-4 px-4 py-10 text-center text-white lg:py-24 bg-navd">
+                    <h2 class="text-2xl font-bold lg:text-4xl">{{ about.won.name }}</h2>
+                    <p class="mt-2 font-light lg:text-3xl">{{ about.won.about }}</p>
+                </div>
+            </div>
+        </div>
+        <Team :team="about.team" />
     </div>
 </template>
 
-<script>
-export default {
-    name: 'About',
-    path: '/about'
-}
+<script setup>
+import useStaticData from "@/composables/staticData";
+const { about } = useStaticData();
 </script>

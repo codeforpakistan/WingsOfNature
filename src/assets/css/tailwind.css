@@ -8,6 +8,7 @@
     }
     html,
     body {
-        @apply bg-background h-full;
+        @apply h-full bg-background;
+        font-family: "Bebas Neue", sans-serif;
     }
 }

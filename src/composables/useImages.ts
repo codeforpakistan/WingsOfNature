@@ -19,6 +19,8 @@ export type ImageMetadata = {
     height: number;
 };
 
+const tempCateg = ["Bees", "Butterflies", "Beetles"];
+
 export const imagesMetadata: ImageMetadata[] = Object.entries(imageGlobWithMetadata).map(([, value]) => {
     const data = value as unknown as ImageMetadata;
     return data;
@@ -37,6 +39,8 @@ const useImages = (): Image[] => {
             alt: slugify(filename).replaceAll("-", " "),
             width: imagesMetadata[index].width,
             height: imagesMetadata[index].height,
+            email: index / 2 === 0 ? "test@gmail.com" : "",
+            category: tempCateg[index % tempCateg.length],
         };
     });
     return images;
