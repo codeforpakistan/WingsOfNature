@@ -1,7 +1,7 @@
 <template>
     <section class="py-3 mx-4 my-10 text-md-center py-md-4 py-lg-5">
         <div class="container flex flex-col items-center gap-3 mx-auto">
-            <p class="text-5xl font-bold text-black">{{ states.title }}</p>
+            <h1 class="text-2xl font-bold tracking-wider text-black lg:text-6xl">{{ states.title }}</h1>
             <p class="my-8 text-2xl font-light m-md-4 m-lg-5">
                 {{ states.content }}
             </p>
@@ -11,7 +11,7 @@
                     :key="index"
                     class="flex flex-col items-center w-full p-8 mb-2 text-white rounded-lg bg-navd md:w-1/2 lg:w-1/3 xl:w-1/4"
                 >
-                    <h5 class="text-6xl font-bold">{{ stat.value }}</h5>
+                    <h5 class="font-bold text-8xl">{{ stat.value }}</h5>
                     <p class="text-xl font-bold text-center">{{ stat.label }}</p>
                 </div>
             </div>

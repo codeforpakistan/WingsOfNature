@@ -37,7 +37,19 @@ export default defineNuxtConfig({
     runtimeConfig: {
         MONGODB_URI: process.env.MONGODB_URI,
     },
-    modules: ["@nuxtjs/tailwindcss", "@nuxt/image-edge", "vite-plugin-vue-type-imports/nuxt", "@kevinmarrec/nuxt-pwa"],
+    modules: [
+        "@nuxtjs/tailwindcss",
+        "@nuxtjs/google-fonts",
+        "@nuxt/image-edge",
+        "vite-plugin-vue-type-imports/nuxt",
+        "@kevinmarrec/nuxt-pwa",
+    ],
+    googleFonts: {
+        families: {
+            Poppins: true,
+            "Bebas Neue": true,
+        },
+    },
     image: {
         //supported providers are currently either vercel or ipx
         provider: getProvider(),
@@ -66,11 +78,5 @@ export default defineNuxtConfig({
             duration: 350,
         },
     },
-    tailwindcss: {
-        cssPath: "@/assets/css/tailwind.css",
-    },
-    css: [
-        // Import Poppins font
-        // Other CSS files or Tailwind CSS if not using JIT mode
-    ],
+    css: ["@/assets/css/tailwind.css"],
 });
