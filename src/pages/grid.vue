@@ -26,10 +26,13 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import getData from "@/composables/getData";
+import { useRoute } from "vue-router";
 import useModalVisibility from "@/composables/useModalVisibility";
 import Modal from "~/components/modal.vue";
 
-const pictures = await getData();
+const route = useRoute();
+const pictures = await getData(route.query.id);
+
 const { isModalOpen, openModal, closeModal } = useModalVisibility();
 
 const modalImage = ref<string>("");

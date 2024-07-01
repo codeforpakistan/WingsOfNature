@@ -1,14 +1,7 @@
-import nodemailer from "nodemailer";
+import sgMail from "@sendgrid/mail";
 
-const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: process.env.SMTP_PORT,
-    secure: false,
-    auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-    },
-});
+// Set the SendGrid API key
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export const sendMail = (formData) => {
     const emailContent = `
@@ -24,12 +17,14 @@ export const sendMail = (formData) => {
         text: emailContent,
         attachments: [
             {
-                filename: formData.picture.filename,
                 content: formData.picture.data.toString("base64"),
-                encoding: "base64",
+                filename: formData.picture.filename,
+                type: formData.picture.mimetype,
+                disposition: "attachment",
+                content_id: "picture",
             },
         ],
     };
 
-    return transporter.sendMail(mailOptions);
+    return sgMail.send(mailOptions);
 };

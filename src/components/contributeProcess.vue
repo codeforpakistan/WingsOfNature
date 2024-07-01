@@ -1,7 +1,7 @@
 <template>
     <section class="py-3 text-center bg-grey" :class="{ 'bg-navd text-white': data.title === 'Contribute Pictures' }">
         <div class="container flex flex-col items-center gap-1 mx-auto">
-            <h1 class="text-6xl font-bold tracking-wide">{{ data.title }}</h1>
+            <h1 class="text-4xl font-bold tracking-wide lg:text-6xl">{{ data.title }}</h1>
             <p class="my-2 text-2xl font-light">
                 {{ data.method }}
             </p>

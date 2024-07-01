@@ -1,7 +1,7 @@
 <template>
     <section class="py-3 mx-4 my-10 text-md-center py-md-4 py-lg-5">
         <div class="container flex flex-col items-center gap-3 mx-auto">
-            <h1 class="text-2xl font-bold tracking-wider text-black lg:text-6xl">{{ states.title }}</h1>
+            <h1 class="text-4xl font-bold tracking-wider text-black lg:text-6xl">{{ states.title }}</h1>
             <p class="my-8 text-2xl font-light m-md-4 m-lg-5">
                 {{ states.content }}
             </p>

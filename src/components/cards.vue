@@ -1,7 +1,7 @@
 <template>
     <div class="px-8 py-12 md:px-28 bg-navd">
         <h1
-            class="block py-2 pl-3 pr-4 mb-8 text-2xl font-bold tracking-wider text-center text-white lg:text-6xl md:border-0 md:p-0"
+            class="block py-2 pl-3 pr-4 mb-8 text-4xl font-bold tracking-wider text-center text-white lg:text-6xl md:border-0 md:p-0"
         >
             CATEGORIES
         </h1>
