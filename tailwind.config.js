@@ -23,8 +23,13 @@ module.exports = {
                 "3xl": "1.875rem", // 30px
                 "4xl": "2.25rem", // 36px
                 "5xl": "3rem", // 48px
-                "6xl": "8rem", // 64px
+                "6xl": "5rem",
+                "8xl": "8rem",
                 // Add more responsive font sizes as needed
+            },
+            fontFamily: {
+                sans: ["Poppins", "sans-serif"],
+                bebas: ["Bebas Neue", "cursive"],
             },
         },
     },

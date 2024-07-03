@@ -4,11 +4,17 @@
 
 @layer base {
     :root {
-        color-scheme: dark;
     }
     html,
     body {
-        @apply h-full bg-background;
+        font-family: "Poppins", sans-serif;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         font-family: "Bebas Neue", sans-serif;
     }
 }

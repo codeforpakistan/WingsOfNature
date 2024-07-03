@@ -5,13 +5,14 @@
         <Meta name="description" content="Where nature meets art" />
     </Head>
     <NuxtLayout>
-        <Navbar />
+        <Navbar v-if="!isModalOpen" />
         <NuxtPage />
-        <Footer />
+        <Footer v-if="!isModalOpen" />
     </NuxtLayout>
 </template>
 
 <script setup>
+const { isModalOpen } = useModalVisibility();
 useHead({
     htmlAttrs: {
         lang: "en",

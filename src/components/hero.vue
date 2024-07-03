@@ -3,11 +3,11 @@
         <div
             class="relative xl:h-[100vh] block w-full after:content after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
         >
-            <h5
-                class="absolute bottom-0 left-0 z-20 w-3/5 p-4 mb-2 font-light leading-5 text-white bg-black bg-opacity-25 text-16px lg:leading-10 lg:mt-16 lg:text-2xl sm:w-3/5 lg:w-1/3 lg:top-0 lg:bottom-auto"
+            <p
+                class="absolute bottom-0 left-0 z-20 w-3/5 p-4 mb-2 font-light leading-5 text-white bg-black bg-opacity-25 lg:font-normal text-16px lg:leading-10 lg:mt-16 lg:text-3xl sm:w-3/5 lg:w-1/3 lg:top-0 lg:bottom-auto"
             >
-                Welcome to Wings of Nature, a showcase of diverse critters found in our neighbourhood.
-            </h5>
+                Welcome to Wings of Nature, a showcase of diverse critters found in our neighborhood.
+            </p>
             <NuxtImg
                 format="webp"
                 :src="image"

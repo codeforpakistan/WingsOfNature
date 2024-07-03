@@ -5,7 +5,7 @@
     >
         <div class="container mx-auto b">
             <img :src="footer.logo" alt="Logo" class="w-5/6 h-56 mx-auto mb-2 lg:w-2/6" />
-            <p class="w-full px-4 mx-auto text-2xl font-light lg:w-3/6">{{ footer.oneliner }}</p>
+            <p class="w-full px-4 mx-auto text-xl font-light lg:text-2xl lg:w-3/6">{{ footer.oneliner }}</p>
         </div>
     </footer>
 </template>

@@ -7,7 +7,7 @@
             <button
                 data-collapse-toggle="navbar-default"
                 type="button"
-                class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 bg-gray-100 rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 aria-controls="navbar-default"
                 aria-expanded="false"
                 @click="toggleMenu"
@@ -39,25 +39,25 @@
                     <li>
                         <router-link
                             to="/"
-                            class="block py-2 pl-3 pr-4 text-2xl text-white rounded lg:text-4xl md:border-0 md:p-0"
+                            class="block py-2 pl-3 pr-4 text-2xl text-white rounded lg:text-5xl md:border-0 md:p-0"
                             :class="{ '': $route.path === '/' }"
-                            >Home</router-link
+                            ><h1>Home</h1></router-link
                         >
                     </li>
                     <li>
                         <router-link
                             to="/contribute"
-                            class="block py-2 pl-3 pr-4 text-2xl text-white rounded lg:text-4xl md:border-0 md:p-0"
+                            class="block py-2 pl-3 pr-4 text-2xl text-white rounded lg:text-5xl md:border-0 md:p-0"
                             :class="{ '': $route.path === '/contribute' }"
-                            >Contribute</router-link
+                            ><h1>Contribute</h1></router-link
                         >
                     </li>
                     <li>
                         <router-link
                             to="/about"
-                            class="block py-2 pl-3 pr-4 text-2xl text-white rounded lg:text-4xl md:border-0 md:p-0"
+                            class="block py-2 pl-3 pr-4 text-2xl text-white rounded lg:text-5xl md:border-0 md:p-0"
                             :class="{ '': $route.path === '/about' }"
-                            >About</router-link
+                            ><h1>About</h1></router-link
                         >
                     </li>
                 </ul>

@@ -4,15 +4,13 @@
             <Hero image="/e_wasp.png" />
             <Cards />
             <States />
-            <CritterProcs :data="critterProcs" />
-            <CritterProcs :data="imageProcs" />
+            <ContributeProcess :data="critterProcs" />
+            <ContributeProcess :data="imageProcs" />
         </div>
     </main>
 </template>
 
 <script setup lang="ts">
-import getData from "@/composables/getData";
 import useStaticData from "@/composables/staticData";
 const { critterProcs, imageProcs } = useStaticData();
-// const data = await getData();
 </script>
