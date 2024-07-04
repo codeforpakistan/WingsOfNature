@@ -7,7 +7,7 @@
             <button
                 data-collapse-toggle="navbar-default"
                 type="button"
-                class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 bg-gray-100 rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                class="inline-flex items-center justify-center w-10 h-10 p-2 mr-4 text-sm text-gray-500 bg-gray-100 rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200"
                 aria-controls="navbar-default"
                 aria-expanded="false"
                 @click="toggleMenu"
@@ -34,7 +34,7 @@
                 :class="{ hidden: !menuOpen, block: menuOpen, 'w-full': true, 'md:block': true, 'md:w-auto': true }"
             >
                 <ul
-                    class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg lg:space-x-24 md:space-x-16 bg-nav md:p-0 bg-dark-50 md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+                    class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg lg:space-x-24 md:space-x-16 bg-nav md:p-0 md:flex-row md:mt-0 md:border-0"
                 >
                     <li>
                         <router-link
@@ -61,10 +61,6 @@
                         >
                     </li>
                 </ul>
-                <!-- <button @click="toggleDarkMode">
-          <SunIcon v-if="!darkMode" class="w-5 h-5" />
-          <MoonIcon v-else class="w-5 h-5" />
-        </button> -->
             </div>
         </div>
     </nav>
@@ -81,17 +77,6 @@ export default defineComponent({
             menuOpen.value = !menuOpen.value;
         };
         return { menuOpen, toggleMenu };
-    },
-    data() {
-        return {
-            darkMode: false,
-        };
-    },
-    methods: {
-        toggleDarkMode() {
-            this.darkMode = !this.darkMode;
-            document.documentElement.setAttribute("data-theme", this.darkMode ? "dark" : "light");
-        },
     },
 });
 </script>
