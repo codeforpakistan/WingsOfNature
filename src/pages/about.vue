@@ -14,8 +14,8 @@
             </div>
 
             <div class="w-full">
-                <div class="flex flex-col gap-4 px-4 py-10 text-center text-white lg:py-24 bg-navd">
-                    <h2 class="text-2xl font-bold tracking-wider lg:text-5xl">{{ about.won.name }}</h2>
+                <div class="flex flex-col gap-4 px-4 py-10 text-white lg:py-24 bg-navd">
+                    <h2 class="text-2xl font-bold tracking-wider text-center lg:text-5xl">{{ about.won.name }}</h2>
                     <p class="mt-2 font-light lg:text-3xl">{{ about.won.about }}</p>
                 </div>
             </div>
