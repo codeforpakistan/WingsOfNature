@@ -19,16 +19,3 @@ useHead({
     },
 });
 </script>
-
-<style>
-.layout-enter-active,
-.layout-leave-active {
-    transition: all 350ms;
-}
-.layout-enter-from,
-.layout-leave-to {
-    filter: grayscale(0.5);
-    opacity: 0;
-    filter: blur(1rem);
-}
-</style>
