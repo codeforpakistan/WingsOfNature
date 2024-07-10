@@ -94,10 +94,11 @@ const about = ref({
         about: "Wings of Nature is a collaborative initiative between Precision Medicine Lab and Code For Pakistan, dedicated to celebrating and safeguarding the small yet mighty flying insects in our environment. From bees to beetles to butterflies, these incredible creatures are often overlooked and endangered due to human activity. Their roles are crucial as they pollinate our plants, sustain our ecosystems, and influence our food supply and everyday lives. Our project aims to raise awareness, foster community involvement, and promote conservation efforts to protect these essential wings of nature. Join us in our mission to appreciate and preserve the intricate beauty and ecological significance of these vital insects.",
     },
     team: [
-        { image: "/person.png", name: "Dr Lorem" },
-        { image: "/person.png", name: "Dr Lorem" },
-        { image: "/person.png", name: "Dr Lorem" },
-        { image: "/person.png", name: "Dr Lorem" },
+        { image: "/person.png", name: "Dr Faisal", title: "Principal investigator PML" },
+        { image: "/ali.jpeg", name: "Ali Raza", title: "Director Technology CFP" },
+        { image: "/mubassir.jpg", name: "Mubassir Hayat", title: "Technology Manager CFP" },
+        { image: "/person.png", name: "Farooq Islam", title: "Technology Lead CFP" },
+        { image: "/person.png", name: "Asim", title: "lorem Lorem" },
     ],
 });
 export default function useStaticData() {
