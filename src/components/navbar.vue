@@ -34,12 +34,12 @@
                 :class="{ hidden: !menuOpen, block: menuOpen, 'w-full': true, 'md:block': true, 'md:w-auto': true }"
             >
                 <ul
-                    class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg lg:space-x-24 md:space-x-16 bg-nav md:p-0 md:flex-row md:mt-0 md:border-0"
+                    class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg lg:space-x-24 md:space-x-16 bg-nav md:p-0 lg:pr-3 md:flex-row md:mt-0 md:border-0"
                 >
                     <li>
                         <router-link
                             to="/"
-                            class="block py-2 pl-3 pr-4 text-2xl text-white rounded lg:text-5xl md:border-0 md:p-0"
+                            class="block py-2 pl-3 pr-4 text-2xl text-white rounded lg:text-4xl md:border-0 md:p-0"
                             :class="{ '': $route.path === '/' }"
                             ><h1>Home</h1></router-link
                         >
@@ -47,7 +47,7 @@
                     <li>
                         <router-link
                             to="/contribute"
-                            class="block py-2 pl-3 pr-4 text-2xl text-white rounded lg:text-5xl md:border-0 md:p-0"
+                            class="block py-2 pl-3 pr-4 text-2xl text-white rounded lg:text-4xl md:border-0 md:p-0"
                             :class="{ '': $route.path === '/contribute' }"
                             ><h1>Contribute</h1></router-link
                         >
@@ -55,7 +55,7 @@
                     <li>
                         <router-link
                             to="/about"
-                            class="block py-2 pl-3 pr-4 text-2xl text-white rounded lg:text-5xl md:border-0 md:p-0"
+                            class="block py-2 pl-3 pr-4 text-2xl text-white rounded lg:text-4xl md:border-0 md:p-0"
                             :class="{ '': $route.path === '/about' }"
                             ><h1>About</h1></router-link
                         >
